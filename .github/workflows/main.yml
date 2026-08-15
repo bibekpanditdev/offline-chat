@@ -13,6 +13,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@v4
@@ -42,7 +44,7 @@ jobs:
           path: build/app/outputs/flutter-apk/app-release.apk
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
         with:
           tag_name: v1.0.${{ github.run_number }}
