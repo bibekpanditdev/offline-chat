@@ -136,7 +136,7 @@ class _StatusBanner extends StatelessWidget {
     }
     return Container(
       width: double.infinity,
-      color: theme.colorScheme.surfaceContainerHighest,
+      color: theme.colorScheme.surfaceVariant,
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       child: Row(
         children: [
@@ -228,7 +228,7 @@ class _PeerTile extends StatelessWidget {
         leading: CircleAvatar(
           backgroundColor: peer.isConnected
               ? Theme.of(context).colorScheme.primary
-              : Theme.of(context).colorScheme.surfaceContainerHighest,
+              : Theme.of(context).colorScheme.surfaceVariant,
           child: Icon(
             Icons.phone_android,
             color: peer.isConnected

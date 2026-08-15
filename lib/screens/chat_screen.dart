@@ -101,7 +101,7 @@ class _MessageBubble extends StatelessWidget {
     final align = message.isMe ? Alignment.centerRight : Alignment.centerLeft;
     final color = message.isMe
         ? theme.colorScheme.primary
-        : theme.colorScheme.surfaceContainerHighest;
+        : theme.colorScheme.surfaceVariant;
     final textColor =
         message.isMe ? theme.colorScheme.onPrimary : theme.colorScheme.onSurface;
 
@@ -126,7 +126,7 @@ class _MessageBubble extends StatelessWidget {
                 child: Text(
                   message.senderName,
                   style: theme.textTheme.labelSmall
-                      ?.copyWith(color: textColor.withValues(alpha: 0.75)),
+                      ?.copyWith(color: textColor.withOpacity(0.75)),
                 ),
               ),
             Text(message.text, style: TextStyle(color: textColor)),
@@ -134,7 +134,7 @@ class _MessageBubble extends StatelessWidget {
             Text(
               DateFormat.Hm().format(message.timestamp),
               style: theme.textTheme.labelSmall
-                  ?.copyWith(color: textColor.withValues(alpha: 0.6)),
+                  ?.copyWith(color: textColor.withOpacity(0.6)),
             ),
           ],
         ),
